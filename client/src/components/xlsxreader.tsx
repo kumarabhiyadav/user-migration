@@ -122,6 +122,8 @@ const ExcelReader: React.FC = () => {
 
   const handleInsertToDB = async (row: RowData, platform: string) => {
     try {
+
+  
       const response = await fetch(domain + endpoints.insertusers, {
         method: "POST",
         headers: {
@@ -160,7 +162,7 @@ const ExcelReader: React.FC = () => {
           const newMigratedUser = prevMigratedUser + 1;
           if (newMigratedUser === data.length) {
             alert("Migration Completed");
-            window.location.reload();
+            // window.location.reload();
           }
           return newMigratedUser;
         });
