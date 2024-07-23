@@ -146,19 +146,28 @@ const ExcelReader: React.FC = () => {
   };
 
   async function migrate() {
+
+    if(!selectedOption){
+      alert("Please choose a platform first")
+      return;
+    }
     for (let i = 0; i < data.length; i++) {
       const user = data[i];
       let response = await handleInsertToDB(user, selectedOption);
 
       if (response.status) {
-        setMigratedUser((migratedUser) => migratedUser + 1);
+        setMigratedUser((prevMigratedUser) => {
+          const newMigratedUser = prevMigratedUser + 1;
+          if (newMigratedUser === data.length) {
+            alert("Migration Completed");
+            window.location.reload();
+          }
+          return newMigratedUser;
+        });
       }
     }
 
-    if(migratedUser == data.length) {
-      alert("Migration Completed");
-      window.location.reload();
-    }
+   
   }
 
   return (
