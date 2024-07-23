@@ -1,0 +1,36 @@
+.excel-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .excel-table th, .excel-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .excel-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .info-button, .empty-cell-button {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .info-button {
+    background-color: #4CAF50;
+  }
+  
+  .empty-cell-button {
+    background-color: #f44336;
+  }
